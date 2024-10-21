@@ -3,14 +3,18 @@ import reactLogo from './assets/react.svg'
 
 import './App.css'
 
+
 function App() {
   const [count, setCount] = useState(0)
   useEffect(() => {
-    // @ts-ignore
-    window.electron.subscribeStatistics((stats) => console.log(stats));
+   
+    const unsub = window.electron.subscribeStatistics((stats) => console.log(stats));
+    return unsub;
   }, [])
   return (
-    <>
+    <div className="App">
+      
+      
       <div>
  
         <a href="https://react.dev" target="_blank">
@@ -29,7 +33,7 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
-    </>
+    </div>
   )
 }
 

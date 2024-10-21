@@ -1,5 +1,5 @@
 import { app, BrowserWindow, ipcMain } from 'electron';
-import { isDev } from './utilits.js';
+import { ipcMainHandle, isDev } from './utilits.js';
 import { getStaticData, pollResources } from './resourceManeger.js';
 import { getPreloadPath } from './pathResolver.js';
 
@@ -23,11 +23,7 @@ app.on("ready", () => {
 
     pollResources(mainWindow);
 
-    handleGetStaticData(()=>{
+    ipcMainHandle("getStaticData", ()=>{
         return getStaticData();
     });
 });
-
-function handleGetStaticData(callback: () => StaticData) {
-    ipcMain.handle('getStaticData', callback);
-}

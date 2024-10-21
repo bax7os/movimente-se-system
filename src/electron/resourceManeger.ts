@@ -2,27 +2,31 @@ import osUtils from 'os-utils';
 import fs from 'fs';
 import os from 'os';
 import { BrowserWindow } from 'electron';
+import { ipcWebContentsSend } from './utilits.js';
 const POLLING_INTERVAL = 500;
 
 export function pollResources(mainWindow: BrowserWindow) {
     setInterval(async () => {
        const cpuUsage = await getCpuUsage();
-       const ramUsage = await getRamUsage();
-       const storeData =  getStoreData();
-       mainWindow.webContents.send("statistics", { cpuUsage, ramUsage, storeData: storeData });
+       const ramUsage =  getRamUsage();
+       const storageData =   getStorageData();
+       ipcWebContentsSend('statistics',mainWindow.webContents, { 
+        cpuUsage, 
+        ramUsage, 
+        storageUsage: storageData.usage, });
    
     }, POLLING_INTERVAL);
 }
 
-function getCpuUsage() {
+function getCpuUsage(): Promise<number> {
     return new Promise(resolve => {
-        osUtils.cpuUsage(resolve)
-    })
+        osUtils.cpuUsage(resolve);
+    });
    
 }
 
 export function getStaticData() {
-    const totalStorage = getStoreData().total;
+    const totalStorage = getStorageData().total;
     const cpuModel = os.cpus()[0].model;
     const totalMemoryGB = Math.floor(osUtils.totalmem() / 1024);
 
@@ -40,7 +44,7 @@ function getRamUsage() {
     return 1 - osUtils.freememPercentage();
 }
 
-function getStoreData() {
+function getStorageData() {
 
     const stats = fs.statfsSync(process.platform == 'win32' ? 'C://' : '/');
     const total = stats.bsize * stats.blocks;
