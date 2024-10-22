@@ -1,10 +1,8 @@
-import { app, BrowserWindow, ipcMain, Menu, Tray } from 'electron';
-import { ipcMainHandle, isDev } from './util.js';
-import { getStaticData, pollResources } from './resourceManeger.js';
-import { getAssetPath, getPreloadPath } from './pathResolver.js';
+import { app, BrowserWindow, ipcMain } from 'electron';
+import { isDev } from './util.js';
+import {  pollResources } from './resourceManeger.js';
+import { getPreloadPath } from './pathResolver.js';
 import { createTray } from './tray.js';
-
-
 
 
 
@@ -15,6 +13,7 @@ app.on("ready", () => {
         }, 
        
     });
+
 
     if (isDev()) {
         mainWindow.loadURL('http://localhost:5123');
@@ -27,6 +26,7 @@ app.on("ready", () => {
     createTray(mainWindow);
     handleCloseEvents(mainWindow);
 });
+
 function handleCloseEvents(mainWindow: BrowserWindow) {
     let willClose = false;
   

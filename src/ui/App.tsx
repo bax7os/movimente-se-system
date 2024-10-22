@@ -1,23 +1,13 @@
-import { useEffect, useState } from 'react'
-
-
-import './App.css'
+import React, { useState } from 'react';
 
 
 function App() {
- 
-  useEffect(() => {
-   
-    const unsub = window.electron.subscribeStatistics((stats) => console.log(stats));
-    return unsub;
-  }, [])
   
   return (
-    <div className="App">
-     
+    <div>
+      
     </div>
   );
 }
-
 
 export default App;
