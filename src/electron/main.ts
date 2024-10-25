@@ -13,7 +13,7 @@ app.on("ready", () => {
         }, 
        
     });
-
+    
 
     if (isDev()) {
         mainWindow.loadURL('http://localhost:5123');
