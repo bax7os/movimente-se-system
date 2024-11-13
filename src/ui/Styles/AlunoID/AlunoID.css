@@ -1,0 +1,48 @@
+.details {
+    background-color: #3d3d3d;
+    padding: 20px;
+    max-height: 50vh;
+    margin: 20px auto; /* Centraliza a div horizontalmente */
+    width: 80%; /* Define a largura desejada */
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+ul {
+    list-style-type: none; /* Remove os marcadores da lista */
+    padding: 0;
+}
+
+li {
+    font-size: 1.2em; /* Aumenta o tamanho da fonte */
+    margin-bottom: 10px; /* Espaçamento entre os itens da lista */
+}
+
+strong {
+    color: #FFD700; /* Cor diferente para os títulos */
+}
+.submit-button-2 {
+    width: 10vw;
+    padding: 12px;
+    background-color: #ff0000;
+    border: none;
+    border-radius: 5px;
+    color:aliceblue;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+
+.central-container {
+    display: flex;
+    flex-direction: column; /* Alinha os filhos na vertical */
+    justify-content: flex-start; /* Alinha os filhos no início do eixo principal */
+    align-items: center; /* Centraliza os filhos no eixo transversal */
+    gap: 20px;
+    width: 100%;
+}
+
+.container{
+    overflow-y: auto; 
+}

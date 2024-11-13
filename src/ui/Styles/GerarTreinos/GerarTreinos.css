@@ -1,0 +1,133 @@
+.central-container-GerarTreinos {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    width: 100%;
+}
+.container-GerarTreinos {
+    background-color: #1d1c1c;
+    padding: 20px;
+    border-radius: 18px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    width: 95vw;
+    height: 90vh;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    overflow: hidden;
+    overflow-y: auto; 
+}
+.box-Ficha{
+  background-color: #3d3d3d;
+    padding: 20px;
+    flex: 1;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+}
+.box1-GerarTreinos, .box2-GerarTreinos {
+    background-color: #3d3d3d;
+    padding: 20px;
+    flex: 1;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #ffffff;
+}
+
+.button-GerarTreinos {
+    background-color: #FFD700;
+    color: black;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin: 5px 0;
+    width: 100%;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.button-GerarTreinos:hover {
+    background-color: #ffb300;
+}
+.central-container-GerarTreinos {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+  }
+  
+  .box1-GerarTreinos, .box2-GerarTreinos {
+    background-color: #3d3d3d;
+    padding: 20px;
+    flex: 1;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+  }
+  
+  h2 {
+    color: #FFD700;
+  }
+  
+  button {
+    background-color: #FFD700;
+    color: black;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin: 5px 0;
+    width: 100%;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #ffb300;
+  }
+  
+  .generate-treino-container {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .generate-treino-button {
+    background-color: #FFD700;
+    color: black;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+  }
+  
+  .generate-treino-button:hover {
+    background-color: #ffb300;
+  }
+  
+  .options-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  .ficha-container {
+    margin-top: 20px;
+  }
+  
+  .ficha-treino {
+    background-color: #1d1c1c;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
