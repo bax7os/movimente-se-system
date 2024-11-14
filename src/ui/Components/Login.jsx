@@ -39,26 +39,31 @@ function Login() {
     }
   };
   return (
-    <div className="login-container">
-      <div className="login-box">
-        <img src={logo} alt="Movimente-se" />
-        <form onSubmit={handleSubmit}>
-          <h3>Login</h3>
-          <label htmlFor="email">E-mail</label>
-          <input type="email" id="email" name="email" placeholder="Digite aqui..." onChange={handleInput} />
-          {errors.email && <span className='text-danger'>{errors.email}</span>}
-          <label htmlFor="senha">Senha</label>
-          <input type="password" id="senha" name="senha" placeholder="Digite aqui..." onChange={handleInput} />
-          {errors.senha && <span className='text-danger'>{errors.senha}</span>}
-
-          <div className="options">
-            <Link to="/cadastro">Novo cadastro</Link>
-            <a href="#">Esqueci a senha</a>
-          </div>
-          <button type="submit" className="btn btn-default">Login</button>
-        </form>
+<div className="login-container">
+  <div className="login-box">
+    <div className="logo-container"> <img src={logo} alt="Movimente-se" className="logo" /></div>
+   
+    <form onSubmit={handleSubmit}>
+      <h3 className='title-login'>Login</h3>
+      <div className="field">
+        <input type="email" id="email" name="email" placeholder="Email" onChange={handleInput} />
+        <div className="line" />
       </div>
-    </div>
+      {errors.email && <span className='text-danger'>{errors.email}</span>}
+      <div className="field">
+        <input type="password" id="senha" name="senha" placeholder="Senha" onChange={handleInput} />
+        <div className="line" />
+      </div>
+      {errors.senha && <span className='text-danger'>{errors.senha}</span>}
+      <div className="options-login">
+        <Link to="/cadastro">Novo cadastro</Link>
+        <Link to="/redefinir-senha">Esqueci Senha</Link>
+      </div>
+      <button type="submit" className="btn-login">Login</button>
+    </form>
+  </div>
+</div>
+
   );
 }
 

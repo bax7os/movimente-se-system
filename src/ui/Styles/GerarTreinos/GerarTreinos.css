@@ -19,6 +19,17 @@
     overflow: hidden;
     overflow-y: auto; 
 }
+.personalization-GerarTreinos {
+  display: flex;
+  align-items: center;
+  margin-left: 5%;
+  margin-right: 5%;
+  border-bottom: 1px solid #ccc;
+}
+.central-GerarTreinos{
+  margin-left: 5%;
+  margin-right: 5%;
+}
 .box-Ficha{
   background-color: #3d3d3d;
     padding: 20px;
@@ -72,9 +83,7 @@ h2 {
     margin-bottom: 20px;
   }
   
-  h2 {
-    color: #FFD700;
-  }
+
   
   button {
     background-color: #FFD700;
@@ -130,4 +139,18 @@ h2 {
     border-radius: 5px;
     margin-bottom: 10px;
   }
+  .back-button-GerarTreinos {
+    background-color: black;
+    color: #fff;
+    padding: 10px;
+    width: 9vw;
+    border-radius: 10px;
+    cursor: pointer;
+    border: none;
+    font-size: 13px;
+    transition: background-color 0.3s;
+  }
   
+  .back-button-GerarTreinos:hover {
+    background-color: red;
+  }

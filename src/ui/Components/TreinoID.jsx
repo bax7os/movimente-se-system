@@ -80,16 +80,16 @@ function TreinoID() {
   };
 
   return (
-    <div className="container">
-      <header className="header">
-        <button className="back-button" onClick={() => window.history.back()}>Voltar</button>
+    <div className="container-aluno">
+      <header className="header-aluno">
+        <button className="back-button-aluno" onClick={() => window.history.back()}>Voltar</button>
       </header>
-      <div className="personalization">
+      <div className="personalization-aluno">
         <h1>Detalhes do Treino</h1>
       </div>
       <hr />
-      <div className="central-container">
-        <div className="details">
+      <div className="central-container-aluno">
+        <div className="details-aluno">
           <h2>Informações do Treino</h2>
           <ul>
             <li><strong>Categoria:</strong> {treinos.tipo}</li>
@@ -97,12 +97,13 @@ function TreinoID() {
             <li><strong>Descrição:</strong> {treinos.descricao}</li>
           </ul>
         </div>
-        <div className="news">
-        <div className="central-container">
-          <div className="box1">
-            <form id="cadastroForm" onSubmit={handleUpdate}>
-              <div className="form-row">
-                <div className="form-group">
+        <div className="details-aluno">
+        <h2>Editar Aluno</h2>
+      
+          <div className="box1-aluno">
+            <form id="cadastroForm-aluno" onSubmit={handleUpdate}>
+              <div className="form-row-aluno">
+                <div className="form-group-aluno">
                   <label htmlFor="tipo">Tipo de treino</label>
                   <select id="tipo" name="tipo" onChange={handleInput}>
                     <option value="">Selecione</option>
@@ -115,8 +116,8 @@ function TreinoID() {
                   {errors.tipo && <span className='text-danger'>{errors.tipo}</span>}
                 </div>
               </div>
-              <div className="form-row">
-                <div className="form-group">
+              <div className="form-row-aluno">
+                <div className="form-group-aluno">
                   <label htmlFor="alvo">Categoria</label>
                   <select id="alvo" name="alvo"  onChange={handleInput}>
                     <option value="">Selecione</option>
@@ -126,20 +127,20 @@ function TreinoID() {
                   {errors.alvo && <span className='text-danger'>{errors.alvo}</span>}
                 </div>
               </div>
-              <div className="form-row">
-                <div className="form-group">
+              <div className="form-row-aluno">
+                <div className="form-group-aluno">
                   <label htmlFor="descricao">Descrição</label>
                   <input type="text" id="descricao" name="descricao" placeholder="Digite aqui..."  onChange={handleInput}/>
                   {errors.descricao && <span className='text-danger'>{errors.descricao}</span>}
                 </div>
               </div>
-              <button type="submit" className="submit-button" >Cadastrar </button>
+              <button type="submit" className="submit-button-aluno" >Atualizar </button>
             </form>
           </div>
-        </div>
+        
       </div>
       </div>
-      <button type="submit" className="submit-button-2" onClick={handleDelete}>Deletar</button>
+      <button type="submit" className="submit-button-2-aluno" onClick={handleDelete}>Deletar</button>
     </div>
   );
 }

@@ -82,66 +82,66 @@ function AlunoID() {
   };
 
   return (
-    <div className="container">
-      <header className="header">
-        <button className="back-button" onClick={() => window.history.back()}>Voltar</button>
-      </header>
-      <div className="personalization">
-        <h1>Detalhes do Aluno</h1>
-      </div>
-      <hr />
-      <div className="central-container">
-        <div className="details">
-          <h2>Informações do Aluno</h2>
-          <ul>
-            <li><strong>Nome:</strong> {aluno.nome}</li>
-            <li><strong>Idade:</strong> {aluno.idade}</li>
-            <li><strong>CPF:</strong> {aluno.cpf}</li>
-            <li><strong>Data de Cadastro:</strong> {values.data_de_cadastro}</li> {/* Usar values para pegar a data formatada */}
-            <li><strong>Comorbidade:</strong> {aluno.comorbidade}</li>
-          </ul>
-        </div>
-        <div className="details">
-          <h2>Editar Aluno</h2>
-          {serverError && <p className="error-message">{serverError}</p>}
-          <form id="editForm" onSubmit={handleUpdate}>
-            <div className="form-row">
-              <div className="form-group">
-                <label htmlFor="nome">Nome Completo</label>
-                <input type="text" id="nome" name="nome" value={values.nome} placeholder="Digite aqui..." onChange={handleInput} />
-                {errors.nome && <span className='text-danger'>{errors.nome}</span>}
-              </div>
-              <div className="form-group">
-                <label htmlFor="idade">Idade</label>
-                <input type="number" id="idade" name='idade' value={values.idade} placeholder="Digite aqui..." onChange={handleInput} />
-                {errors.idade && <span className='text-danger'>{errors.idade}</span>}
-              </div>
-            </div>
-            <div className="form-row">
-              <div className="form-group">
-                <label htmlFor="cpf">CPF</label>
-                <input type="text" id="cpf" name="cpf" value={values.cpf} placeholder="Digite aqui..." onChange={handleInput} />
-                {errors.cpf && <span className='text-danger'>{errors.cpf}</span>}
-              </div>
-              <div className="form-group">
-                <label htmlFor="data_de_cadastro">Data de Cadastro</label>
-                <input type="date" id="data_de_cadastro" name="data_de_cadastro" value={values.data_de_cadastro} placeholder="Digite aqui..." onChange={handleInput} />
-                {errors.data_de_cadastro && <span className='text-danger'>{errors.data_de_cadastro}</span>}
-              </div>
-            </div>
-            <div className="form-row">
-              <div className="form-group">
-                <label htmlFor="comorbidade">Comorbidade</label>
-                <input type="text" id="comorbidade" name="comorbidade" value={values.comorbidade} placeholder="Digite aqui..." onChange={handleInput} />
-                {errors.comorbidade && <span className='text-danger'>{errors.comorbidade}</span>}
-              </div>
-            </div>
-            <button type="submit" className="submit-button">Atualizar</button>
-          </form>
-        </div>
-      </div>
-      <button type="submit" className="submit-button-2" onClick={handleDelete}>Deletar</button>
+    <div className="container-aluno">
+    <header className="header-aluno">
+      <button className="back-button-aluno" onClick={() => window.history.back()}>Voltar</button>
+    </header>
+    <div className="personalization-aluno">
+      <h1>Detalhes do Aluno</h1>
     </div>
+    <div className="central-container-aluno">
+      <div className="details-aluno">
+        <h2>Informações do Aluno</h2>
+        <ul>
+          <li><strong>Nome:</strong> {aluno.nome}</li>
+          <li><strong>Idade:</strong> {aluno.idade}</li>
+          <li><strong>CPF:</strong> {aluno.cpf}</li>
+          <li><strong>Data de Cadastro:</strong> {values.data_de_cadastro}</li>
+          <li><strong>Comorbidade:</strong> {aluno.comorbidade}</li>
+        </ul>
+      </div>
+      <div className="details-aluno">
+        <h2>Editar Aluno</h2>
+        {serverError && <p className="error-message">{serverError}</p>}
+        <form id="editForm-aluno" onSubmit={handleUpdate}>
+          <div className="form-row-aluno">
+            <div className="form-group-aluno">
+              <label htmlFor="nome">Nome Completo</label>
+              <input type="text" id="nome" name="nome" value={values.nome} placeholder="Digite aqui..." onChange={handleInput} />
+              {errors.nome && <span className="text-danger">{errors.nome}</span>}
+            </div>
+            <div className="form-group-aluno">
+              <label htmlFor="idade">Idade</label>
+              <input type="number" id="idade" name="idade" value={values.idade} placeholder="Digite aqui..." onChange={handleInput} />
+              {errors.idade && <span className="text-danger">{errors.idade}</span>}
+            </div>
+          </div>
+          <div className="form-row-aluno">
+            <div className="form-group-aluno">
+              <label htmlFor="cpf">CPF</label>
+              <input type="text" id="cpf" name="cpf" value={values.cpf} placeholder="Digite aqui..." onChange={handleInput} />
+              {errors.cpf && <span className="text-danger">{errors.cpf}</span>}
+            </div>
+            <div className="form-group-aluno">
+              <label htmlFor="data_de_cadastro">Data de Cadastro</label>
+              <input type="date" id="data_de_cadastro" name="data_de_cadastro" value={values.data_de_cadastro} placeholder="Digite aqui..." onChange={handleInput} />
+              {errors.data_de_cadastro && <span className="text-danger">{errors.data_de_cadastro}</span>}
+            </div>
+          </div>
+          <div className="form-row-aluno">
+            <div className="form-group-aluno">
+              <label htmlFor="comorbidade">Comorbidade</label>
+              <input type="text" id="comorbidade" name="comorbidade" value={values.comorbidade} placeholder="Digite aqui..." onChange={handleInput} />
+              {errors.comorbidade && <span className="text-danger">{errors.comorbidade}</span>}
+            </div>
+          </div>
+          <button type="submit" className="submit-button-aluno">Atualizar</button>
+        </form>
+      </div>
+    </div>
+    <button type="submit" className="submit-button-2-aluno" onClick={handleDelete}>Deletar</button>
+  </div>
+  
   );
 }
 

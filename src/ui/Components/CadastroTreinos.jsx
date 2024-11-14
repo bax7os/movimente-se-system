@@ -19,15 +19,15 @@ function CadastroTreinos() {
           Authorization: `Bearer ${token}`,
         },
       })
-      .then(response => {
-        setUser(response.data.user);
-      })
-      .catch(error => {
-        console.error(error);
-      });
+        .then(response => {
+          setUser(response.data.user);
+        })
+        .catch(error => {
+          console.error(error);
+        });
     }
   }, []);
-  
+
   const handleInput = (event) => {
     console.log(event.target.value);
     setValues((prev) => ({ ...prev, [event.target.name]: event.target.value }));
@@ -43,67 +43,65 @@ function CadastroTreinos() {
           Authorization: `Bearer ${token}`,
         },
       })
-      .then(res => {
-        console.log(res);
-        navigate('/home'); // Redireciona para a página inicial após cadastro
-      })
-      .catch(error => {
-        console.error("Erro no servidor:", error.response.data);
-        setServerError(error.response.data.mensagem || 'Erro no servidor');
-      });
+        .then(res => {
+          console.log(res);
+          navigate('/home'); // Redireciona para a página inicial após cadastro
+        })
+        .catch(error => {
+          console.error("Erro no servidor:", error.response.data);
+          setServerError(error.response.data.mensagem || 'Erro no servidor');
+        });
     }
   };
 
   return (
-    <div className="container">
-      <header className="header">
-        <Link to="/Home"><button className="back-button no-arrow">Voltar</button></Link>
+    <div className="container-cadastro">
+      <header className="header-cadastro">
+        <Link to="/Home"><button className="back-button-cadastrot no-arrow">Voltar</button></Link>
       </header>
-      <div className="personalization">
+      <div className="personalization-cadastro">
         <h1>Cadastro de treinos</h1>
       </div>
       {serverError && <p className="error-message">{serverError}</p>}
       <hr />
-      <div className="news">
-        <div className="central-container">
-          <div className="box1">
-            <form id="cadastroForm" onSubmit={handleSubmit}>
-              <div className="form-row">
-                <div className="form-group">
-                  <label htmlFor="tipo">Tipo de treino</label>
-                  <select id="tipo" name="tipo" onChange={handleInput}>
-                    <option value="">Selecione</option>
-                    <option value="Fortalecimento específico">Fortalecimento específico</option>
-                    <option value="Superiores">Superiores</option>
-                    <option value="CORE">CORE</option>
-                    <option value="Estabilidade">Estabilidade</option>
-                    <option value="Mobilidade">Mobilidade</option>
-                  </select>
-                  {errors.tipo && <span className='text-danger'>{errors.tipo}</span>}
-                </div>
-              </div>
-              <div className="form-row">
-                <div className="form-group">
-                  <label htmlFor="alvo">Categoria</label>
-                  <select id="alvo" name="alvo" onChange={handleInput}>
-                    <option value="">Selecione</option>
-                    <option value="Infantil">Infantil</option>
-                    <option value="Adulto">Adulto</option>
-                  </select>
-                  {errors.alvo && <span className='text-danger'>{errors.alvo}</span>}
-                </div>
-              </div>
-              <div className="form-row">
-                <div className="form-group">
-                  <label htmlFor="descricao">Descrição</label>
-                  <input type="text" id="descricao" name="descricao" placeholder="Digite aqui..." onChange={handleInput} />
-                  {errors.descricao && <span className='text-danger'>{errors.descricao}</span>}
-                </div>
-              </div>
-              <button type="submit" className="submit-button">Cadastrar</button>
-            </form>
+      <div className="news-cadastro">
+        <form className="cadastroForm-cadastro" onSubmit={handleSubmit}>
+          <div className="form-row-cadastro">
+            <div className="form-group-cadastro">
+              <label htmlFor="tipo">Tipo de treino</label>
+              <select id="tipo" name="tipo" onChange={handleInput}>
+                <option value="">Selecione</option>
+                <option value="Fortalecimento específico">Fortalecimento específico</option>
+                <option value="Superiores">Superiores</option>
+                <option value="CORE">CORE</option>
+                <option value="Estabilidade">Estabilidade</option>
+                <option value="Mobilidade">Mobilidade</option>
+              </select>
+              {errors.tipo && <span className='text-danger'>{errors.tipo}</span>}
+            </div>
           </div>
-        </div>
+          <div className="form-row-cadastro">
+            <div className="form-group-cadastro">
+              <label htmlFor="alvo">Categoria</label>
+              <select id="alvo" name="alvo" onChange={handleInput}>
+                <option value="">Selecione</option>
+                <option value="Infantil">Infantil</option>
+                <option value="Adulto">Adulto</option>
+              </select>
+              {errors.alvo && <span className='text-danger'>{errors.alvo}</span>}
+            </div>
+          </div>
+          <div className="form-row-cadastro">
+            <div className="form-group-cadastro">
+              <label htmlFor="descricao">Descrição</label>
+              <input type="text" id="descricao" name="descricao" placeholder="Digite aqui..." onChange={handleInput} />
+              {errors.descricao && <span className='text-danger'>{errors.descricao}</span>}
+            </div>
+          </div>
+          <button type="submit" className="submit-button-cadastro">Cadastrar</button>
+        </form>
+
+
       </div>
     </div>
   );

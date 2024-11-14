@@ -9,6 +9,7 @@ import AlunoID from './AlunoID';
 import CadastroTreinos from './CadastroTreinos.jsx';
 import GerarTreinos from './GerarTreinos.jsx';
 import TreinoID from './TreinoID.jsx';
+import RedefinirSenha from './RedefinirSenha.jsx';
 function App() {
   return (
     <BrowserRouter>
@@ -21,7 +22,7 @@ function App() {
       <Route path='/cadastro-treino' element= {<CadastroTreinos />}></Route>
       <Route path='/gerar-treinos' element= {<GerarTreinos />}></Route>
       <Route path="/treinos/:id_treino" element={<TreinoID />} /> 
-
+      <Route path="/redefinir-senha" element={<RedefinirSenha />} /> 
       </Routes>
     </BrowserRouter>
   );

@@ -55,39 +55,37 @@ function Home() {
   }, [token]);
 
   return (
-    <div className="container">
-      <header className="header">
-        <button className="back-button no-arrow" onClick={handleLogout}>Sair</button> {/* Chama a função de logout */}
-      </header>
-      <div className="personalization">
-        <h1>Olá, Professor(a) {user.nome}</h1>
-      </div>
-      <hr />
-      <div className="news">
-        <div className="botao-lado-a-lado">
-          <button className="new-student" onClick={handleNavigateCadastroAluno}>Cadastrar novo aluno</button>
-          <button className="new-treino"  onClick={handleNavigateCadastroTreino}>Cadastrar Treinos</button>
-
+<div className="container-home">
+  <header className="header-home">
+    <button className="back-button-home no-arrow" onClick={handleLogout}>Sair</button>
+  </header>
+  <div className="personalization-home">
+    <h1>Olá, Professor(a) {user.nome}</h1>
+  </div>
+  <hr />
+  <div className="news-home">
+    <div className="button-container-home">
+      <button className="new-student-home" onClick={handleNavigateCadastroAluno}>Cadastrar novo aluno</button>
+      <button className="new-treino-home" onClick={handleNavigateCadastroTreino}>Cadastrar Treinos</button>
+    </div>
+    <div className="central-container-home">
+      <div className="box-container-home">
+        <div className="title-box-home">
+          <h2>Lista de Alunos</h2>
         </div>
-        <div className="central-container">
-          <div className="box-complemento">
-            <div className='title-box'>
-              <div className="title">
-                <h2>Lista de Alunos</h2>
-              </div>
-            </div>
-            <div className="box1">
-              {alunos.map(aluno => (
-                <button className='button-alunos' key={aluno.id_aluno} onClick={() => handleNavigateAluno(aluno.id_aluno)}>
-                  {aluno.nome}
-                </button>
-              ))}
-            </div>
-          </div>
+        <div className="box-content-home">
+          {alunos.map(aluno => (
+            <button className="button-alunos-home" key={aluno.id_aluno} onClick={() => handleNavigateAluno(aluno.id_aluno)}>
+              {aluno.nome}
+            </button>
+          ))}
         </div>
-        <button className="new-treino" onClick={handleNavigateGerarTreinos}>Treinos</button>
       </div>
     </div>
+    <button className="new-treino-home" onClick={handleNavigateGerarTreinos}>Treinos</button>
+  </div>
+</div>
+
   );
 }
 

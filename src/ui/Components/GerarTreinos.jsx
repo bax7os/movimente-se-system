@@ -63,12 +63,13 @@ function GerarTreinos() {
   return (
     <div className="container-GerarTreinos">
       <header className="header-GerarTreinos">
-        <Link to="/Home"><button className="back-button no-arrow-GerarTreinos">Voltar</button></Link>
+        <Link to="/Home"><button className="back-button-GerarTreinos">Voltar</button></Link>
       </header>
       <div className="personalization-GerarTreinos">
-        <h1>Treinos</h1>
+        <h1>Gerar Ficha de Treinos</h1>
       </div>
       <hr />
+      <div className="central-GerarTreinos">
       <div className="central-container-GerarTreinos">
         <div className="box1-GerarTreinos">
           <h2>Treinos Infantis</h2>
@@ -111,6 +112,7 @@ function GerarTreinos() {
             </div>
           </div>
         )}
+      </div>
       </div>
     </div>
   );
